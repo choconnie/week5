@@ -1,0 +1,15 @@
+<h1>Admin Users List</h1>
+
+<% @users.each do |user| %>
+  <div>
+    User name: <%= user.firstname %> <%= user.lastname %><br>
+    Admin user? <%= user.admin %><br>
+    <%= link_to "go to edit page", edit_admin_user_path(user.id) %><br>
+    Delete User? <%= link_to "delete", admin_user_path(user), method: :delete, confirm: "You sure?" %><br><br>
+  </div>
+<% end %>
+
+<div>
+  <h3>Create a new user</h3>
+  <%= link_to "New User", new_admin_user_path %>
+</div>

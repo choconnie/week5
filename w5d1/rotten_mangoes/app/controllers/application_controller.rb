@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def restrict_access_admin_page
+    if !current_user.admin
+      flash[:alert] = "You are not allowed to see this page."
+      redirect_to root_path
+    end
+  end
+
   def restrict_access
     if !current_user
       flash[:alert] = "You must log in."

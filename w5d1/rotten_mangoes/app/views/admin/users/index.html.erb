@@ -1,0 +1,5 @@
+<h1>Admin User Page</h1>
+
+<% if current_user && current_user.admin %>
+  Go to admin page: <%= link_to "Admin User list page", admin_user_path(:id) %>
+<% end %>

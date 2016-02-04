@@ -1,0 +1,8 @@
+<%= link_to "Back to home", root_path %><br/>
+
+<% if current_user.id == @user.id %>
+  <h2>Edit your profile.</h2>
+  <%= render 'form' %>
+<% else %>
+  <h2>You are not allowed to edit other's profile</h2>
+<% end %>
